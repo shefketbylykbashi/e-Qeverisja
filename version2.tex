@@ -1,0 +1,120 @@
+% !TeX program = pdflatex
+% Konvertuar nga dokumenti i dhënë në strukturën zyrtare IEEEtran Conference.
+% Për Overleaf: Menu -> Compiler -> pdfLaTeX.
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\renewcommand{\abstractname}{Abstrakti}
+\renewcommand{\IEEEkeywordsname}{Fjalët kyçe}
+\renewcommand{\refname}{Referencat}
+% Ndarja e autoreve ne dy rreshta sipas renditjes ne dokumentin origjinal.
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}%
+  \hfill\mbox{}\par
+  \vspace{0.9em}%
+  \mbox{}\hfill\begin{@IEEEauthorhalign}%
+}
+\makeatother
+\begin{document}
+\title{Modelet, korniza e mundësive dhe sfidat e eQeverisjes në Kosovë}
+% Secili autor ka bllokun e vet, si në dokumentin origjinal.
+% Rreshti i parë: 3 autorë; rreshti i dytë: 2 autorë të qendërzuar.
+% Blloqet individuale te autoreve ne formatin IEEE Conference: 3 + 2.
+\author{
+\IEEEauthorblockN{Shefket Bylygbashi}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{shefket.bylygbashi@student.uni-pr.edu}}}\\
+\and
+\IEEEauthorblockN{Rinor Ukshini}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{rinor.ukshini1@student.uni-pr.edu}}}\\
+\and
+\IEEEauthorblockN{Arton Gërguri}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{arton.gerguri@student.uni-pr.edu}}}\\
+\linebreakand
+\IEEEauthorblockN{Rina Bunjaku}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{rina.bunjaku@student.uni-pr.edu}}}\\
+\and
+\IEEEauthorblockN{Besarta Berisha}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{besarta.berisha1@student.uni-pr.edu}}}\\
+}
+\maketitle
+\begin{abstract}
+
+\end{abstract}
+\begin{IEEEkeywords}
+e-Qeverisje, interoperabilitet, koordinim ndërinstitucional
+\end{IEEEkeywords}
+\section{Hyrje}
+Transformimi digjital i administratës publike është bërë një nga shtyllat kryesore të modernizimit të shtetit, sepse ndikon drejtpërdrejt në mënyrën se si institucionet organizojnë proceset e brendshme, shkëmbejnë të dhëna dhe ofrojnë shërbime për qytetarët dhe bizneset. Në këtë kuptim, e-Qeverisja nuk duhet të shihet vetëm si kalim i formularëve nga sporteli në internet, por si një model i ri organizativ dhe teknologjik që kërkon shërbime të orientuara te përdoruesi, rrjete të integruara ndërmjet institucioneve, identitet digjital të besueshëm, siguri kibernetike, standarde të përbashkëta dhe kapacitete profesionale. Literatura bashkëkohore e trajton e-Qeverisjen si një sistem shumëdimensional ku suksesi varet jo vetëm nga teknologjia, por edhe nga besimi, cilësia e shërbimeve, koordinimi institucional, përfshirja qytetare dhe aftësia e administratës për të ndryshuar proceset e punës \cite{r1,r2,r3}.
+
+Në Kosovë, zhvillimi i e-Qeverisjes është intensifikuar përmes platformës e-Kosova, investimeve në infrastrukturë digjitale dhe miratimit të dokumenteve të reja strategjike. Strategjia e Kosovës për Qeverisje Elektronike 2023–2027 e lidh transformimin digjital me tri fusha kryesore: vizionin dhe udhëheqjen, teknologjinë dhe aftësitë digjitale. Strategjia parashikon koordinim në nivel strategjik dhe operacional, shërbime publike digjitale të orientuara te përdoruesi, arkitekturë të përbashkët qeveritare, përmirësim të interoperabilitetit dhe forcim të sigurisë kibernetike \cite{r4}. Kjo qasje plotësohet nga Agjenda Digjitale e Kosovës 2030, e miratuar në vitin 2023 si strategji ndërsektoriale për transformimin digjital të ekonomisë dhe shoqërisë \cite{r5}.
+
+Në nivel institucional, koordinimi teknik i sistemeve qeveritare është përgjegjësi e Agjencisë së Shoqërisë së Informacionit (ASHI) në kuadër të Ministrisë së Punëve të Brendshme, ndërsa shkëmbimi i të dhënave ndërmjet institucioneve realizohet përmes platformës së ndërveprueshmërisë Government Gateway, funksionale që nga viti 2017. Baza ligjore përfshin, ndër të tjera, Ligjin për shërbimet e shoqërisë së informacionit (Nr. 04/L-094), Ligjin për identifikimin elektronik dhe shërbimet e besuara në transaksionet elektronike (Nr. 08/L-022) dhe Ligjin për mbrojtjen e të dhënave personale (Nr. 06/L-082) \cite{r4}.
+
+Megjithatë, zhvillimi i infrastrukturës dhe rritja e qasjes në internet nuk nënkuptojnë automatikisht përdorim të lartë të shërbimeve publike digjitale. OECD raportoi se përdorimi i internetit në Kosovë ishte 98.3\% në vitin 2023, ndërsa të dhënat për vitin 2022 tregonin se 72\% e individëve nuk kishin përdorur internetin për informata ose shërbime të administratës publike. I njëjti vlerësim evidentonte se vetëm rreth 10\% e shërbimeve publike ishin të disponueshme online në atë periudhë, duke nënvizuar boshllëkun ndërmjet lidhshmërisë së lartë dhe digjitalizimit të plotë të shërbimeve \cite{r4,r6}. Raportet e administratës publike kanë theksuar gjithashtu se interoperabiliteti mbetet sfidë: ndonëse dhjetëra institucione dhe sisteme janë lidhur me infrastrukturën e shkëmbimit të të dhënave, Korniza Kombëtare e Interoperabilitetit ende kërkon zbatim më të plotë dhe më të njëtrajtshëm \cite{r7}. Kjo çështje është veçanërisht e rëndësishme për nivelin lokal, pasi, sipas Strategjisë, institucionet qendrore dhe ato lokale së bashku ofrojnë mbi 700 shërbime për qytetarët dhe bizneset, prandaj digjitalizimi i tyre kërkon koordinim ndërmjet ministrive dhe 38 komunave të Kosovës \cite{r4}.
+
+Për këtë arsye, vlerësimi i e-Qeverisjes në Kosovë duhet të kombinojë dimensionin teknologjik me atë juridik, institucional dhe organizativ. Një model funksional duhet të sigurojë që shërbimet të projektohen nga nevojat e qytetarëve, që të dhënat të shkëmbehen në mënyrë të sigurt dhe sipas parimit “vetëm një herë”, që përgjegjësitë ndërmjet institucioneve të jenë të qarta dhe që investimet në sisteme të reja të mos krijojnë zgjidhje të izoluara. Në këtë kontekst, ky punim analizon gjendjen aktuale, kornizën e mundësive dhe sfidave, bazën ligjore e institucionale, faktorët e identifikuar përmes analizës SWOT dhe nevojën për një mekanizëm më të fortë të koordinimit ndërinstitucional.
+\section{Qëllimi i punimit}
+Qëllimi i këtij punimi është të vlerësojë modelin aktual të e-Qeverisjes në Kosovë dhe të identifikojë kushtet që ndikojnë në kalimin nga digjitalizimi i shërbimeve individuale drejt një sistemi të integruar, të sigurt dhe të orientuar te përdoruesi. Analiza synon të lidhë zhvillimet teknologjike me kornizën ligjore dhe institucionale, duke shqyrtuar rolin e koordinimit qendror, interoperabilitetit, identitetit elektronik, mbrojtjes së të dhënave dhe kapaciteteve digjitale. Në të njëjtën kohë, punimi synon të dallojë përparësitë e arritura nga problemet që vazhdojnë të kufizojnë përdorimin dhe cilësinë e shërbimeve elektronike. Duke u bazuar në literaturën shkencore dhe dokumentet strategjike të Kosovës, synohet të formulohet një grup rekomandimesh të zbatueshme për koordinim më të mirë ndërinstitucional, standardizim të zhvillimit të sistemeve dhe rritje të përdorimit të shërbimeve digjitale në nivel qendror dhe lokal. Metodologjikisht, punimi mbështetet në analizë cilësore të dokumenteve (literaturë shkencore, strategji, ligje dhe raporte ndërkombëtare), e kombinuar me analizën SWOT në nivel qendror dhe lokal. Pyetja kryesore kërkimore është: cilët faktorë ligjorë, institucionalë dhe teknologjikë e pengojnë kalimin e e-Qeverisjes në Kosovë nga shërbimet e veçanta drejt një sistemi të integruar, dhe si mund të forcohet koordinimi ndërmjet nivelit qendror dhe atij lokal?
+\section{Objektivat e punimit}
+Objektivat kryesore janë:
+\begin{enumerate}
+\renewcommand{\labelenumi}{(\arabic{enumi})}
+\item të vlerësohet modeli aktual dhe niveli i zhvillimit të e-Qeverisjes në Kosovë;
+\item të shqyrtohet korniza kryesore ligjore, strategjike dhe institucionale;
+\item të identifikohen përmes analizës SWOT përparësitë, dobësitë, mundësitë dhe kërcënimet në nivel qendror dhe lokal;
+\item bazuar në këtë vlerësim, të formulohen rekomandime konkrete për forcimin e koordinimit ndërinstitucional, interoperabilitetit, standardeve të përbashkëta dhe orientimit të shërbimeve drejt qytetarit.
+\end{enumerate}
+\section{Gjendja aktuale e punëve të ngjashme (State of the Art)}
+Hulumtimet e viteve 2020–2026 tregojnë se e-Qeverisja po zhvendoset nga koncepti i thjeshtë i ofrimit elektronik të shërbimeve drejt transformimit të integruar të administratës. Yera et al. \cite{r1}, duke analizuar adoptimin e e-Qeverisjes në 26 vende evropiane, tregojnë se përdorimi i shërbimeve elektronike ndikohet nga faktorë të shumtë socialë dhe digjitalë dhe se ekzistenca e infrastrukturës nuk e eliminon vetvetiu hendekun në përdorim. Në mënyrë të ngjashme, Glyptis et al. \cite{r2} argumentojnë se në vende të vogla suksesi i projekteve të e-Qeverisjes lidhet me gatishmërinë elektronike, infrastrukturën, kornizën politike e ligjore, si dhe me faktorë organizativë, institucionalë dhe socio-kulturorë. Këto gjetje janë të rëndësishme për Kosovën, ku shkalla e lartë e lidhshmërisë në internet bashkëjeton me sfida në përdorimin, integrimin dhe maturinë e shërbimeve digjitale.
+
+Malodia et al. \cite{r3} propozojnë një kornizë të integruar ku e-Qeverisja mbështetet në qytetari të fuqizuar, rrjete shumë të integruara dhe arkitekturë sistemesh që evoluon vazhdimisht. Sipas këtij këndvështrimi, orientimi te qytetari dhe integrimi i kanaleve janë po aq të rëndësishëm sa teknologjia. Për Kosovën, kjo nënkupton se platforma qendrore e shërbimeve duhet të mbështetet nga procese back-office të digjitalizuara dhe regjistra të ndërveprueshëm, jo vetëm nga një ndërfaqe elektronike e përbashkët.
+
+Në literaturën që trajton drejtpërdrejt Kosovën, Dërmaku dhe Emini \cite{r8} analizojnë digjitalizimin e administratës dhe bazën juridike, duke e lidhur zhvillimin e administratës elektronike me procedurën administrative, regjistrat publikë, mbrojtjen e të dhënave dhe qasjen në informata. Studimi ofron një bazë të rëndësishme për të kuptuar se transformimi digjital kërkon përputhje ndërmjet teknologjisë dhe normave juridike. Më tej, Krasniqi, Elezi dhe Vuniqi \cite{r9} analizojnë në vitin 2026 digjitalizimin e administratës publike dhe platformën e-Kosova, duke identifikuar si sfida kryesore besimin institucional, aftësitë digjitale, interoperabilitetin dhe sigurinë kibernetike. Këto studime, së bashku me vlerësimet ndërkombëtare \cite{r6,r7}, sugjerojnë se faza e ardhshme e e-Qeverisjes në Kosovë duhet të fokusohet në integrimin institucional dhe teknik, matjen e cilësisë së shërbimeve dhe përdorimin real nga qytetarët, jo vetëm në rritjen numerike të shërbimeve të publikuara online.
+
+Sa i përket modelit të zbatuar, e-Qeverisja në Kosovë ndjek një model të koordinuar në mënyrë qendrore, të ndërtuar mbi përvojën estoneze, pasi Strategjia 2023–2027 u hartua me mbështetjen e Akademisë së e-Qeverisjes së Estonisë \cite{r10}, si dhe mbi parimet e Komisionit Evropian (“vetëm një herë”, “digjital së pari”, personalizimi dhe ofrimi proaktiv i shërbimeve) dhe Kornizën Evropiane të Interoperabilitetit \cite{r4}. Ky model mbështetet në platformën e-Kosova si pikë e vetme qasjeje për shërbimet dhe në Government Gateway për shkëmbimin e të dhënave ndërmjet institucioneve. Në gjendjen aktuale, shërbimet transaksionale ofrohen përmes e-Kosovës, por integrimi ndërmjet institucioneve mbetet i pjesshëm, pasi vetë Strategjia synon që vetëm deri në vitin 2027 të lidhen me Government Gateway 70\% e sistemeve informative të institucioneve \cite{r4}. Studimet e shqyrtuara për Kosovën fokusohen kryesisht në bazën ligjore ose në pranimin e shërbimeve nga qytetarët, ndërsa mungon një vlerësim i integruar i modelit aktual që kombinon analizën SWOT në nivel qendror e lokal me rekomandime konkrete për koordinim ndërinstitucional. Ky punim synon ta adresojë pikërisht këtë boshllëk.
+\IEEEtriggeratref{3}
+\begin{thebibliography}{00}
+\bibitem{r1} A. Yera, O. Arbelaitz, O. Jauregui, and J. Muguerza, “Characterization of e-Government adoption in Europe,” \emph{PLOS ONE}, vol. 15, no. 4, e0231585, 2020, doi: 10.1371/journal.pone.0231585.
+\bibitem{r2} L. Glyptis, M. Christofi, D. Vrontis, M. Del Giudice, S. Dimitriou, and P. Michael, “E-Government implementation challenges in small countries: The project manager’s perspective,” \emph{Technological Forecasting and Social Change}, vol. 152, 119880, 2020, doi: 10.1016/j.techfore.2019.119880.
+\bibitem{r3} S. Malodia, A. Dhir, M. Mishra, and Z. A. Bhatti, “Future of e-Government: An integrated conceptual framework,” \emph{Technological Forecasting and Social Change}, vol. 173, 121102, 2021, doi: 10.1016/j.techfore.2021.121102.
+\bibitem{r4} Qeveria e Republikës së Kosovës, \emph{Strategjia e Kosovës për Qeverisje Elektronike 2023–2027}, Prishtinë, Kosovë, 2023.
+\bibitem{r5} Ministria e Ekonomisë, \emph{Agjenda Digjitale e Kosovës 2030}, Prishtinë, Kosovë, 2023.
+\bibitem{r6} OECD, \emph{Western Balkans Competitiveness Outlook 2024: Kosovo}, Paris, France: OECD Publishing, 2024.
+\bibitem{r7} OECD, \emph{Public Administration in Kosovo 2024: Assessment against the Principles of Public Administration}, SIGMA Monitoring Reports, Paris, France: OECD Publishing, 2025, doi: 10.1787/a53fce6b-en.
+\bibitem{r8} K. Dërmaku and A. Emini, “Digitisation of Administration and Legal Basis in Kosovo,” \emph{Access to Justice in Eastern Europe}, vol. 7, no. 1, pp. 245–263, 2024, doi: 10.33327/AJEE-18-7.1-a000107.
+\bibitem{r9} M. Krasniqi, Z. Elezi, and D. Vuniqi, “The Digitalization of Public Administration in Kosovo: Challenges, Opportunities and the Impact on the Quality of Public Services,” \emph{Prizren Social Science Journal}, vol. 10, no. 2, pp. 165–177, 2026, doi: 10.32936/pssj.v10i2.880.
+\bibitem{r10} e-Governance Academy, “Shaping digital futures: Kosovo’s journey in e-government strategy development,” Tallinn, Estonia. [Online]. Available: \url{https://ega.ee/shaping-digital-futures-kosovos-strategy/}. Accessed: Oct. 17, 2026.
+\end{thebibliography}
+\end{document}

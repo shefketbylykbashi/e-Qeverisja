@@ -1,0 +1,571 @@
+% =====================================================================
+%  Punim konference - formati IEEE (IEEEtran, conference)
+%  Versioni i avancuar
+%  Overleaf: ngarkoni main.tex + references.bib, kompiluesi: pdfLaTeX
+% =====================================================================
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[albanian]{babel}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{url}
+
+% Emërtimet në shqip (babel i rivendos në \begin{document}, prandaj \addto)
+\addto\captionsalbanian{%
+  \renewcommand{\abstractname}{Abstrakt}%
+  \renewcommand{\tablename}{Tabela}%
+}
+\renewcommand{\IEEEkeywordsname}{Fjalë kyçe}
+
+\begin{document}
+
+% ---------------------------------------------------------------------
+% 1. TITULLI I PUNIMIT
+% ---------------------------------------------------------------------
+\title{Modelet, korniza e mundësive dhe sfidat e eQeverisjes në Kosovë:\\
+Një vlerësim i integruar i maturisë, kornizës institucionale\\
+dhe koordinimit ndërinstitucional}
+
+\author{
+\IEEEauthorblockN{Emri Mbiemri}
+\IEEEauthorblockA{\textit{Fakulteti / Departamenti} \\
+\textit{Universiteti}\\
+Prishtinë, Kosovë \\
+email@domain.com}
+}
+
+\maketitle
+
+% ---------------------------------------------------------------------
+% ABSTRAKTI - do të plotësohet pasi të përfundojë punimi
+% ---------------------------------------------------------------------
+\begin{abstract}
+[Do të plotësohet.]
+\end{abstract}
+
+% ---------------------------------------------------------------------
+% 2. FJALËT KYÇE
+% ---------------------------------------------------------------------
+\begin{IEEEkeywords}
+eQeverisja, ndërveprueshmëria, koordinimi ndërinstitucional
+\end{IEEEkeywords}
+
+% ---------------------------------------------------------------------
+% 3. HYRJE
+% ---------------------------------------------------------------------
+\section{Hyrje}
+\label{sec:hyrje}
+
+Transformimi digjital i sektorit publik ka evoluar nga një iniciativë
+kryesisht teknologjike në një proces të thellë reformimi institucional.
+Nëse valët e para të eQeverisjes u përqendruan në publikimin e
+informacionit dhe në digjitalizimin e formularëve, paradigma bashkëkohore
+e \textit{qeverisjes së epokës digjitale} kërkon riintegrimin e
+funksioneve të fragmentuara, organizimin e shërbimeve sipas nevojave të
+qytetarit dhe ridizajnimin e proceseve administrative nga fillimi deri në
+fund \cite{dunleavy2006,mergel2019}. Në kontekstin evropian, ky orientim
+është institucionalizuar përmes parimeve si \textit{digjitale si
+parazgjedhje}, \textit{vetëm një herë} (\textit{once-only}) dhe
+ndërveprueshmëria si parakusht për shërbime publike të integruara
+\cite{eif2017}.
+
+Për Kosovën, kjo agjendë ka rëndësi të dyfishtë. Nga njëra anë, vendi ka
+parakushte demografike dhe infrastrukturore relativisht të favorshme:
+një popullsi prej rreth 1.6 milionë banorësh, ndër më të rejat në Evropë,
+dhe një shkallë shumë të lartë të qasjes së ekonomive familjare në
+internet \cite{ask2023}. % VERIFIKO: shifrat e fundit të ASK-së
+Nga ana tjetër, procesi i integrimit evropian, i nisur formalisht me
+hyrjen në fuqi të Marrëveshjes së Stabilizim-Asociimit në vitin 2016 dhe i
+thelluar me aplikimin për anëtarësim në BE në dhjetor 2022, e shndërron
+përafrimin me standardet evropiane të administratës publike digjitale në
+një detyrim strategjik dhe jo vetëm në një zgjedhje politike
+\cite{ec2024,sigma2023}.
+
+Gjatë dekadës së fundit, Kosova ka ndërtuar elementet themelore të një
+ekosistemi të eQeverisjes. Agjencia e Shoqërisë së Informacionit (ASHI)
+është përcaktuar si autoriteti qendror për infrastrukturën shtetërore të
+TIK-ut me Ligjin Nr.~04/L-145 \cite{ligji04L145}; platforma eKosova
+funksionon si pikë e vetme qasjeje në shërbimet elektronike për qytetarët
+dhe bizneset; platforma shtetërore e ndërveprueshmërisë synon shkëmbimin
+e të dhënave ndërmjet regjistrave bazë; ndërsa Ligji Nr.~06/L-082 për
+Mbrojtjen e të Dhënave Personale e ka përafruar kornizën kombëtare me
+Rregulloren e Përgjithshme të BE-së për Mbrojtjen e të Dhënave (GDPR)
+\cite{ligji06L082}.
+
+Megjithatë, ekzistenca e këtyre elementeve nuk garanton integrimin e tyre
+në një model koherent qeverisjeje. Literatura ndërkombëtare tregon se
+shumica e projekteve të eQeverisjes në vendet në zhvillim dhe në tranzicion
+dështojnë tërësisht ose pjesërisht, kryesisht për shkak të hendekut
+ndërmjet projektimit formal dhe realitetit institucional \cite{heeks2003}.
+Në rastin e Kosovës, ky hendek shfaqet potencialisht në tri dimensione:
+(i) \textit{horizontalisht}, përmes zhvillimit të sistemeve sektoriale nga
+ministri dhe agjenci të veçanta, pa standarde të përbashkëta semantike dhe
+organizative; (ii) \textit{vertikalisht}, përmes asimetrisë ndërmjet
+nivelit qendror dhe 38 komunave, të cilat sipas Ligjit Nr.~03/L-040 për
+Vetëqeverisjen Lokale kanë kompetenca vetanake në ofrimin e shërbimeve
+\cite{ligji03L040}, por kapacitete digjitale shumë të ndryshme; dhe
+(iii) \textit{nga ana e kërkesës}, ku përdorimi i shërbimeve elektronike
+varet nga besimi i qytetarëve, dobia e perceptuar dhe aftësitë digjitale
+\cite{carter2005}.
+
+Ky punim nis nga premisa se sfida kryesore e eQeverisjes në Kosovë nuk
+është më mungesa e teknologjisë, por mungesa e koordinimit institucional
+që e shndërron teknologjinë në vlerë publike. Kjo premisë mbështetet në
+kornizën e \textit{zbatimit të teknologjisë} (\textit{technology
+enactment}) të Fountain-it, sipas së cilës efektet e TIK-ut në qeveri
+ndërmjetësohen nga format organizative dhe rregullimet institucionale
+ekzistuese \cite{fountain2001}.
+
+Pavarësisht rëndësisë së temës, ekziston një boshllëk i qartë njohurish.
+Meqë Kosova nuk është shtet anëtar i Kombeve të Bashkuara, ajo nuk
+përfshihet në Indeksin e Zhvillimit të eQeverisjes (EGDI)
+\cite{undesa2024}, gjë që e privon vendin nga një krahasim i standardizuar
+ndërkombëtar. Studimet ekzistuese për Kosovën janë kryesisht përshkruese,
+sektoriale ose të lidhura me projekte të donatorëve, dhe rrallë e lidhin
+vlerësimin e maturisë së shërbimeve me analizën e kornizës ligjore dhe me
+dinamikat e qeverisjes shumënivelëshe. Në rrafsh teorik, modelet klasike të
+maturisë janë kritikuar për supozimin e një progresi linear
+\cite{coursey2008} dhe për mungesë ndjeshmërie ndaj kontekstit specifik të
+vendeve në tranzicion \cite{janowski2015}. Për të adresuar këtë boshllëk,
+punimi udhëhiqet nga pyetjet kërkimore (PK) në vijim:
+
+\begin{IEEEdescription}[\IEEEsetlabelwidth{PK4:}]
+  \item[PK1:] Në cilën fazë maturie ndodhet modeli aktual i eQeverisjes në
+        Kosovë, në dimensionin vertikal (qendër--komunë) dhe horizontal
+        (ndërsektorial)?
+  \item[PK2:] Në çfarë mase korniza ligjore dhe institucionale ekzistuese
+        mundëson apo kufizon integrimin dhe ndërveprueshmërinë e
+        shërbimeve?
+  \item[PK3:] Cilët faktorë të brendshëm dhe të jashtëm e dallojnë
+        zhvillimin e eQeverisjes në nivel qendror nga ai në nivel lokal?
+  \item[PK4:] Cilët mekanizma të qeverisjes së koordinimit mund ta
+        reduktojnë fragmentimin institucional në proceset e digjitalizimit?
+\end{IEEEdescription}
+
+Kontributi i punimit është i trefishtë. Në rrafsh \textit{empirik}, ofrohet
+një vlerësim i integruar i eQeverisjes në Kosovë, i cili ndërthur maturinë
+e shërbimeve, kornizën normative dhe dimensionin qendër--lokal. Në rrafsh
+\textit{teorik}, testohet zbatueshmëria e modeleve të maturisë dhe e qasjes
+së kontekstualizimit në rastin e një shteti në tranzicion që mbetet jashtë
+sistemit të matjeve të OKB-së. Në rrafsh \textit{praktik}, propozohet një
+strategji e strukturuar e koordinimit ndërinstitucional, e mbështetur në
+shtresat e Kornizës Evropiane të Ndërveprueshmërisë.
+
+% ---------------------------------------------------------------------
+% 4. QËLLIMI I PUNIMIT
+% ---------------------------------------------------------------------
+\section{Qëllimi i punimit}
+\label{sec:qellimi}
+
+Qëllimi i këtij punimi është të zhvillojë dhe të zbatojë një kuadër
+vlerësimi të integruar për eQeverisjen në Kosovë, i cili lidh tri nivele
+analize: (i) maturinë e shërbimeve elektronike, (ii) kapacitetin e
+kornizës ligjore dhe institucionale për të mbështetur integrimin, dhe
+(iii) mekanizmat e koordinimit ndërmjet institucioneve qendrore dhe
+komunave. Në vend që të trajtohet si projekt teknologjik i izoluar,
+eQeverisja konceptualizohet si sistem socio-teknik, rezultatet e të cilit
+varen nga ndërveprimi i politikave, menaxhimit dhe teknologjisë
+\cite{pardo2012,fountain2001}.
+
+Kuadri analitik ndërthur modelet e maturisë të Layne dhe Lee
+\cite{layne2001} dhe të Andersen dhe Henriksen \cite{andersen2006} me katër
+shtresat e ndërveprueshmërisë (ligjore, organizative, semantike dhe
+teknike) të Kornizës Evropiane të Ndërveprueshmërisë \cite{eif2017}. Në
+rrafsh metodologjik, punimi mbështetet në një dizajn me metoda të
+përziera, të strukturuar si studim rasti shumënivelësh, i cili përfshin:
+analizë cilësore të dokumenteve (legjislacioni, strategjitë dhe raportet e
+monitorimit të KE-së dhe SIGMA-s); vlerësim të strukturuar të një mostre
+shërbimesh në platformën eKosova dhe në portalet e 38 komunave; si dhe
+intervista gjysmë të strukturuara me zyrtarë të ASHI-t, të ministrive të
+linjës dhe të komunave. Gjetjet sintetizohen përmes analizës SWOT dhe
+zgjerohen në matricën TOWS, në mënyrë që diagnoza të shndërrohet në
+opsione strategjike. Në fund, punimi synon t'u ofrojë politikëbërësve një
+bazë empirike dhe një udhërrëfyes të zbatueshëm për kalimin nga
+digjitalizimi i fragmentuar drejt shërbimeve publike të integruara dhe të
+orientuara nga qytetari.
+
+% ---------------------------------------------------------------------
+% 5. OBJEKTIVAT E PUNIMIT
+% ---------------------------------------------------------------------
+\section{Objektivat e punimit}
+\label{sec:objektivat}
+
+\begin{enumerate}
+  \item \textbf{O1 (PK1):} Të vlerësohet niveli i maturisë së shërbimeve
+        elektronike në nivel qendror dhe lokal, përmes një indeksi të
+        përshtatur nga modelet e maturisë.
+  \item \textbf{O2 (PK2):} Të identifikohen boshllëqet, mbivendosjet dhe
+        mospërputhjet e kornizës ligjore e institucionale në raport me
+        \textit{acquis} të BE-së dhe me EIF-in.
+  \item \textbf{O3 (PK3):} Të kryhet një analizë krahasuese SWOT për
+        nivelin qendror dhe atë lokal dhe të zgjerohet në matricë TOWS.
+  \item \textbf{O4 (PK4):} Të propozohet një model qeverisjeje për
+        koordinimin ndërinstitucional, me role, instrumente dhe tregues
+        të qartë të performancës.
+\end{enumerate}
+
+% ---------------------------------------------------------------------
+% 6. GJENDJA AKTUALE (STATE OF THE ART)
+% ---------------------------------------------------------------------
+\section{Gjendja aktuale e kërkimeve të ngjashme}
+\label{sec:sota}
+
+\subsection{Modelet e maturisë dhe kritika e tyre}
+Linja e parë e kërkimit e konceptualizon eQeverisjen si proces evolutiv me
+faza. Modeli i Layne dhe Lee \cite{layne2001} dallon katër faza
+(katalogimin, transaksionin, integrimin vertikal dhe integrimin
+horizontal) dhe argumenton se me secilën fazë rritet kompleksiteti
+teknologjik e organizativ, por edhe vlera për qytetarin. Andersen dhe
+Henriksen \cite{andersen2006} e kritikojnë këtë qasje si tepër të
+përqendruar te teknologjia dhe propozojnë modelin PPR, ku maturia matet
+sipas shkallës së rindërtimit të proceseve dhe orientimit ndaj
+përdoruesit. Janowski \cite{janowski2015} e zgjeron më tej këtë
+perspektivë me një model evolutiv katërfazor, faza më e avancuar e të
+cilit, kontekstualizimi, kërkon që politikat digjitale të përshtaten me
+nevojat specifike të vendit, sektorit dhe komunitetit. Megjithatë, Coursey
+dhe Norris \cite{coursey2008}, bazuar në të dhëna empirike nga qeveritë
+lokale në SHBA, tregojnë se modelet e fazave nuk e parashikojnë mirë
+zhvillimin real: shumica e institucioneve mbeten për një kohë të gjatë në
+fazat informative dhe transaksionale. Rrjedhimisht, modelet e maturisë
+duhet të përdoren si instrumente diagnostikuese dhe jo si trajektore
+normative. Tabela~\ref{tab:modelet} paraqet një sintezë krahasuese të
+modeleve kryesore dhe relevancën e tyre për rastin e Kosovës.
+
+\begin{table*}[t]
+\caption{Sintezë krahasuese e modeleve kryesore të maturisë së eQeverisjes
+dhe relevanca e tyre për Kosovën}
+\label{tab:modelet}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{>{\raggedright\arraybackslash}p{2.5cm}
+                >{\raggedright\arraybackslash}p{4.3cm}
+                >{\raggedright\arraybackslash}p{3.6cm}
+                >{\raggedright\arraybackslash}p{5.2cm}}
+\toprule
+\textbf{Modeli} & \textbf{Fazat} & \textbf{Fokusi analitik} &
+\textbf{Relevanca për Kosovën} \\
+\midrule
+Layne dhe Lee \cite{layne2001} &
+Katalogim; transaksion; integrim vertikal; integrim horizontal &
+Integrimi teknologjik dhe funksional &
+Bazë për matjen e integrimit qendër--komunë dhe ndërmjet sektorëve \\
+Andersen dhe Henriksen \cite{andersen2006} &
+Kultivim; zgjerim; maturim; revolucionarizim (PPR) &
+Rindërtimi i proceseve dhe orientimi ndaj qytetarit &
+Vlerëson nëse digjitalizimi shkon përtej portalit eKosova drejt
+ridizajnimit të proceseve \\
+Janowski \cite{janowski2015} &
+Digjitalizim; transformim; angazhim; kontekstualizim &
+Evolucioni institucional dhe kontekstual &
+Përshtatja me kontekstin e tranzicionit, decentralizimit dhe integrimit
+evropian \\
+UN DESA -- EGDI \cite{undesa2024} &
+Indeks i përbërë: shërbimet online (OSI), infrastruktura e
+telekomunikacionit (TII), kapitali njerëzor (HCI) &
+Krahasueshmëria ndërkombëtare &
+Kosova është jashtë matjes; lind nevoja për vetëvlerësim me metodologji
+ekuivalente \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Faktorët institucionalë të suksesit}
+Linja e dytë fokusohet te përcaktuesit e suksesit. Gil-García dhe Pardo
+\cite{gilgarcia2005} i grupojnë faktorët kritikë në pesë kategori:
+informacioni dhe të dhënat, teknologjia, aspektet organizative e
+menaxheriale, korniza ligjore e rregullatore, si dhe konteksti
+institucional e mjedisor. Heeks \cite{heeks2003} vlerëson se rreth 35\% e
+projekteve të eQeverisjes në vendet në zhvillim janë dështime totale dhe
+rreth 50\% dështime të pjesshme, dhe këtë e shpjegon me hendekun ndërmjet
+projektimit dhe realitetit në shtatë dimensione (modeli ITPOSMO). Fountain
+\cite{fountain2001} shton se teknologjia nuk prodhon vetvetiu transformim:
+ajo ``zbatohet'' përmes strukturave burokratike dhe rrjeteve ekzistuese, të
+cilat shpesh e riprodhojnë fragmentimin në vend që ta eliminojnë.
+
+\subsection{Ndërveprueshmëria dhe koordinimi ndërinstitucional}
+Linja e tretë, më e lidhura drejtpërdrejt me këtë punim, trajton integrimin
+dhe ndërveprueshmërinë. Scholl dhe Klischewski \cite{scholl2007} e
+konceptualizojnë integrimin si qëllim organizativ dhe ndërveprueshmërinë si
+aftësi teknike e semantike për ta realizuar atë, duke identifikuar
+kufizime politike, ligjore, organizative dhe financiare. Pardo, Nam dhe
+Burke \cite{pardo2012} tregojnë empirikisht se ndërveprueshmëria është
+rezultat i ndërveprimit të politikave, menaxhimit dhe teknologjisë, ku
+qeverisja e përbashkët dhe besimi ndërinstitucional janë po aq vendimtarë
+sa standardet teknike. Korniza Evropiane e Ndërveprueshmërisë
+\cite{eif2017} e operacionalizon këtë qasje përmes katër shtresave
+(ligjore, organizative, semantike, teknike) dhe një shtrese mbikëqyrëse të
+qeverisjes së shërbimeve publike të integruara. Rasti i Estonisë, shpesh i
+cituar si pikë referimi, tregon se suksesi lidhet më shumë me kulturën e
+inovacionit, vendimet e hershme arkitekturore dhe bashkëpunimin
+publik--privat sesa me investimet teknologjike në vetvete
+\cite{kalvet2012}.
+
+\subsection{Dimensioni lokal dhe boshllëku kërkimor}
+Në nivel lokal, Moon \cite{moon2002} gjen se adoptimi i eQeverisjes në
+komuna mbetet kryesisht në faza të hershme, se retorika e transformimit e
+tejkalon realitetin dhe se madhësia e kapacitetet administrative të
+komunës ndikojnë ndjeshëm. Kjo perspektivë është veçanërisht relevante për
+Kosovën, ku dallimet ndërmjet komunave të mëdha urbane dhe atyre të vogla
+rurale janë të theksuara. Në sintezë, literatura ofron instrumente të
+fuqishme për analizën e maturisë, të faktorëve të suksesit dhe të
+ndërveprueshmërisë, por këto linja rrallë integrohen në një kuadër të
+vetëm dhe zbatohen rrallë në kontekstin e shteteve në tranzicion me status
+ndërkombëtar specifik, si Kosova. Ky punim synon ta mbushë pikërisht këtë
+boshllëk.
+
+% ---------------------------------------------------------------------
+% SEKSIONET E TJERA - do të plotësohen në fazën e ardhshme
+% ---------------------------------------------------------------------
+\section{Vlerësimi i modelit aktual të eQeverisjes në Kosovë: gjendja dhe
+rekomandimet}
+\label{sec:vleresimi}
+[Do të plotësohet.]
+
+\section{Korniza ligjore dhe institucionale për zhvillimin e eQeverisjes
+në Kosovë}
+\label{sec:korniza}
+[Do të plotësohet.]
+
+\section{Analiza SWOT e zhvillimit të eQeverisjes në nivel qendror dhe
+lokal}
+\label{sec:swot}
+[Do të plotësohet.]
+
+\section{Strategji për përmirësimin e koordinimit ndërinstitucional në
+proceset e digjitalizimit}
+\label{sec:strategjia}
+[Do të plotësohet.]
+
+\section{Përfundime}
+\label{sec:perfundime}
+[Do të plotësohet.]
+
+% ---------------------------------------------------------------------
+% 7. REFERENCAT
+% ---------------------------------------------------------------------
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
+
+
+% =====================================================================
+%  Referencat - stili IEEEtran
+%  Referencat 1-14: punime shkencore të rishikuara nga kolegët
+%  Referencat e tjera: dokumente institucionale, ligjore dhe statistikore
+% =====================================================================
+
+% ---------------- Modelet e maturisë ----------------
+@article{layne2001,
+  author  = {Layne, Karen and Lee, Jungwoo},
+  title   = {Developing fully functional {E}-government: A four stage model},
+  journal = {Government Information Quarterly},
+  volume  = {18},
+  number  = {2},
+  pages   = {122--136},
+  year    = {2001}
+}
+
+@article{andersen2006,
+  author  = {Andersen, Kim Viborg and Henriksen, Helle Zinner},
+  title   = {E-government maturity models: Extension of the {L}ayne and {L}ee model},
+  journal = {Government Information Quarterly},
+  volume  = {23},
+  number  = {2},
+  pages   = {236--248},
+  year    = {2006}
+}
+
+@article{janowski2015,
+  author  = {Janowski, Tomasz},
+  title   = {Digital government evolution: From transformation to contextualization},
+  journal = {Government Information Quarterly},
+  volume  = {32},
+  number  = {3},
+  pages   = {221--236},
+  year    = {2015}
+}
+
+@article{coursey2008,
+  author  = {Coursey, David and Norris, Donald F.},
+  title   = {Models of e-government: Are they correct? {A}n empirical assessment},
+  journal = {Public Administration Review},
+  volume  = {68},
+  number  = {3},
+  pages   = {523--536},
+  year    = {2008}
+}
+
+% ---------------- Faktorët e suksesit dhe institucionet ----------------
+@article{gilgarcia2005,
+  author  = {Gil-Garc{\'i}a, J. Ram{\'o}n and Pardo, Theresa A.},
+  title   = {E-government success factors: Mapping practical tools to theoretical foundations},
+  journal = {Government Information Quarterly},
+  volume  = {22},
+  number  = {2},
+  pages   = {187--216},
+  year    = {2005}
+}
+
+@techreport{heeks2003,
+  author      = {Heeks, Richard},
+  title       = {Most e{G}overnment-for-Development Projects Fail: How Can Risks be Reduced?},
+  institution = {Institute for Development Policy and Management, University of Manchester},
+  type        = {iGovernment Working Paper},
+  number      = {14},
+  address     = {Manchester, UK},
+  year        = {2003}
+}
+
+@book{fountain2001,
+  author    = {Fountain, Jane E.},
+  title     = {Building the Virtual State: Information Technology and Institutional Change},
+  publisher = {Brookings Institution Press},
+  address   = {Washington, DC},
+  year      = {2001}
+}
+
+@article{dunleavy2006,
+  author  = {Dunleavy, Patrick and Margetts, Helen and Bastow, Simon and Tinkler, Jane},
+  title   = {New public management is dead---long live digital-era governance},
+  journal = {Journal of Public Administration Research and Theory},
+  volume  = {16},
+  number  = {3},
+  pages   = {467--494},
+  year    = {2006}
+}
+
+@article{mergel2019,
+  author  = {Mergel, Ines and Edelmann, Noella and Haug, Nathalie},
+  title   = {Defining digital transformation: Results from expert interviews},
+  journal = {Government Information Quarterly},
+  volume  = {36},
+  number  = {4},
+  pages   = {101385},
+  year    = {2019}
+}
+
+@article{carter2005,
+  author  = {Carter, Lemuria and B{\'e}langer, France},
+  title   = {The utilization of e-government services: Citizen trust, innovation and acceptance factors},
+  journal = {Information Systems Journal},
+  volume  = {15},
+  number  = {1},
+  pages   = {5--25},
+  year    = {2005}
+}
+
+% ---------------- Integrimi dhe ndërveprueshmëria ----------------
+@article{scholl2007,
+  author  = {Scholl, Hans J. and Klischewski, Ralf},
+  title   = {E-government integration and interoperability: Framing the research agenda},
+  journal = {International Journal of Public Administration},
+  volume  = {30},
+  number  = {8--9},
+  pages   = {889--920},
+  year    = {2007}
+}
+
+@article{pardo2012,
+  author  = {Pardo, Theresa A. and Nam, Taewoo and Burke, G. Brian},
+  title   = {E-government interoperability: Interaction of policy, management, and technology dimensions},
+  journal = {Social Science Computer Review},
+  volume  = {30},
+  number  = {1},
+  pages   = {7--23},
+  year    = {2012}
+}
+
+@article{kalvet2012,
+  author  = {Kalvet, Tarmo},
+  title   = {Innovation: A factor explaining e-government success in {E}stonia},
+  journal = {Electronic Government, an International Journal},
+  volume  = {9},
+  number  = {2},
+  pages   = {142--157},
+  year    = {2012}
+}
+
+@article{moon2002,
+  author  = {Moon, M. Jae},
+  title   = {The evolution of e-government among municipalities: Rhetoric or reality?},
+  journal = {Public Administration Review},
+  volume  = {62},
+  number  = {4},
+  pages   = {424--433},
+  year    = {2002}
+}
+
+% ---------------- Dokumente institucionale dhe ndërkombëtare ----------------
+@misc{eif2017,
+  author       = {{European Commission}},
+  title        = {New {E}uropean Interoperability Framework: Promoting seamless services and data flows for {E}uropean public administrations},
+  howpublished = {Publications Office of the European Union, Luxembourg},
+  note         = {COM(2017) 134 final},
+  year         = {2017}
+}
+
+@techreport{undesa2024,
+  author      = {{United Nations Department of Economic and Social Affairs}},
+  title       = {{United Nations E-Government Survey} 2024: Accelerating Digital Transformation for Sustainable Development},
+  institution = {United Nations},
+  address     = {New York, NY},
+  year        = {2024}
+}
+
+@techreport{ec2024,
+  author      = {{European Commission}},
+  title       = {Kosovo 2024 Report},
+  institution = {European Commission},
+  type        = {Commission Staff Working Document},
+  address     = {Brussels},
+  year        = {2024}
+}
+
+@book{sigma2023,
+  author    = {{OECD/SIGMA}},
+  title     = {The Principles of Public Administration},
+  publisher = {OECD Publishing},
+  address   = {Paris},
+  year      = {2023}
+}
+
+% VERIFIKO: titullin e saktë dhe vitin e botimit më të fundit të ASK-së
+@techreport{ask2023,
+  author      = {{Agjencia e Statistikave të Kosovës}},
+  title       = {Përdorimi i teknologjisë së informacionit dhe komunikimit ({TIK}) në ekonomitë familjare},
+  institution = {Agjencia e Statistikave të Kosovës},
+  address     = {Prishtinë},
+  year        = {2023}
+}
+
+% ---------------- Legjislacioni i Kosovës ----------------
+@misc{ligji04L145,
+  author       = {{Kuvendi i Republikës së Kosovës}},
+  title        = {Ligji {Nr.}~04/{L}-145 për Organet Shtetërore të Shoqërisë së Informacionit},
+  howpublished = {Gazeta Zyrtare e Republikës së Kosovës},
+  year         = {2013}
+}
+
+@misc{ligji06L082,
+  author       = {{Kuvendi i Republikës së Kosovës}},
+  title        = {Ligji {Nr.}~06/{L}-082 për Mbrojtjen e të Dhënave Personale},
+  howpublished = {Gazeta Zyrtare e Republikës së Kosovës},
+  year         = {2019}
+}
+
+@misc{ligji03L040,
+  author       = {{Kuvendi i Republikës së Kosovës}},
+  title        = {Ligji {Nr.}~03/{L}-040 për Vetëqeverisjen Lokale},
+  howpublished = {Gazeta Zyrtare e Republikës së Kosovës},
+  year         = {2008}
+}
