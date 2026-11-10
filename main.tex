@@ -1,0 +1,348 @@
+% !TeX program = pdflatex
+% Versioni 3 - IEEEtran Conference.
+% Për Overleaf: Menu -> Compiler -> pdfLaTeX.
+% Burimet kryesore të kontekstit: Strategjia e Kosovës për Qeverisje Elektronike
+% 2023-2027, Agjenda Digjitale e Kosovës 2030 dhe studimi KIPRED/DCAF (2022).
+\documentclass[conference]{IEEEtran}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[albanian]{babel}
+\usepackage{newtxtext}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+% babel i rivendos emërtimet në \begin{document}, prandaj \addto
+\addto\captionsalbanian{%
+  \renewcommand{\abstractname}{Abstrakti}%
+  \renewcommand{\refname}{Referencat}%
+  \renewcommand{\tablename}{Tabela}%
+}
+\renewcommand{\IEEEkeywordsname}{Fjalët kyçe}
+% Ndarja e autorëve në dy rreshta sipas renditjes në dokumentin origjinal.
+\makeatletter
+\newcommand{\linebreakand}{%
+  \end{@IEEEauthorhalign}%
+  \hfill\mbox{}\par
+  \vspace{0.9em}%
+  \mbox{}\hfill\begin{@IEEEauthorhalign}%
+}
+\makeatother
+\begin{document}
+% ---------------------------------------------------------------------
+% 1. TITULLI I PUNIMIT
+% ---------------------------------------------------------------------
+\title{Modelet, korniza e mundësive dhe sfidat e e-Qeverisjes\\
+në Kosovë: Vlerësim i integruar dhe propozim\\
+për përmirësimin e koordinimit ndërinstitucional}
+% Blloqet individuale të autorëve në formatin IEEE Conference: 3 + 2.
+\author{
+\IEEEauthorblockN{Shefket Bylygbashi}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{shefket.bylygbashi@student.uni-pr.edu}}}\\
+\and
+\IEEEauthorblockN{Rinor Ukshini}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{rinor.ukshini1@student.uni-pr.edu}}}\\
+\and
+\IEEEauthorblockN{Arton Gërguri}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{arton.gerguri@student.uni-pr.edu}}}\\
+\linebreakand
+\IEEEauthorblockN{Rina Bunjaku}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{rina.bunjaku@student.uni-pr.edu}}}\\
+\and
+\IEEEauthorblockN{Besarta Berisha}
+\IEEEauthorblockA{\textit{Inxhinieri Kompjuterike}\\
+\textit{dhe Softuerike}\\
+\textit{Fakulteti i Inxhinierisë Elektrike}\\
+\textit{dhe Kompjuterike}\\
+Prishtinë, Kosovë\\
+{\textit{besarta.berisha1@student.uni-pr.edu}}}\\
+}
+\maketitle
+% Abstrakti do të plotësohet pasi të përfundojë punimi.
+% \begin{abstract}
+% \end{abstract}
+% ---------------------------------------------------------------------
+% 2. FJALËT KYÇE
+% ---------------------------------------------------------------------
+\begin{IEEEkeywords}
+e-Qeverisja, ndërveprueshmëria, koordinimi ndërinstitucional
+\end{IEEEkeywords}
+% ---------------------------------------------------------------------
+% 3. HYRJE
+% ---------------------------------------------------------------------
+\section{Hyrje}
+\label{sec:hyrje}
+Transformimi digjital i sektorit publik nuk është më një projekt
+teknologjik, por një reformë institucionale që prek mënyrën se si shteti
+organizon kompetencat, proceset dhe marrëdhënien me qytetarin. Paradigma e
+\textit{qeverisjes së epokës digjitale} kërkon riintegrimin e funksioneve të
+fragmentuara nga reformat e mëparshme menaxheriale, organizimin e
+shërbimeve rreth nevojave të përdoruesit dhe digjitalizimin e proceseve
+administrative nga fillimi deri në fund. Megjithatë,
+teknologjia nuk prodhon vetvetiu transformim: sipas kornizës së
+\textit{zbatimit të teknologjisë} (\textit{technology enactment}), efektet e
+TIK-ut ndërmjetësohen nga strukturat burokratike, rregullat dhe rrjetet
+ekzistuese ndërinstitucionale, të cilat shpesh e riprodhojnë fragmentimin në
+vend që ta eliminojnë. Kjo shpjegon pse shumica e
+projekteve të e-Qeverisjes në vendet në zhvillim dhe në tranzicion dështojnë
+tërësisht ose pjesërisht, kryesisht për shkak të hendekut ndërmjet
+projektimit formal dhe realitetit institucional.
+
+Kosova përbën një rast studimi veçanërisht të pasur për këtë problematikë.
+Vendi ka ndërtuar një trajektore të qëndrueshme strategjike: nga Strategjia
+e parë e Qeverisjes Elektronike 2009--2015 dhe Agjenda Digjitale 2013--2020,
+te anëtarësimi në Agjendën Digjitale të BE-së për Ballkanin Perëndimor
+(2018) dhe Strategjia e Reformës së Administratës Publike (RAP) 2022--2027
+\cite{strategjia2023}. Kjo trajektore kulmon me Agjendën Digjitale të
+Kosovës 2030 (AD~2030), një agjendë horizontale ndërsektoriale me pesë
+objektiva strategjikë dhe buxhet indikativ prej 152 milionë eurosh
+\cite{agjenda2030}, si dhe me Strategjinë e Kosovës për Qeverisje
+Elektronike 2023--2027, të hartuar me mbështetjen e Akademisë Estoneze të
+e-Qeverisjes dhe të strukturuar në gjashtë objektiva: koordinimi e
+menaxhimi, kompetencat digjitale, ndërveprueshmëria, shërbimet digjitale,
+siguria kibernetike dhe inovacioni \cite{strategjia2023}. Në rrafshin
+teknik, ekosistemi mbështetet në rrjetin e dedikuar qeveritar, në platformën
+e ndërveprueshmërisë \textit{Government Gateway} (funksionale që nga viti
+2017) dhe në portalin e-Kosova si dritare e vetme për shërbimet e të gjitha
+niveleve të qeverisjes. Baza ligjore përfshin, ndër të tjera, Ligjin
+Nr.~04/L-094 për shërbimet e shoqërisë së informacionit, Ligjin Nr.~08/L-022
+për identifikimin elektronik dhe shërbimet e besuara, të përafruar me
+eIDAS, dhe Ligjin Nr.~06/L-082 për mbrojtjen e të dhënave personale, të
+përafruar me GDPR \cite{strategjia2023}. Procesi i integrimit evropian, i
+formalizuar me Marrëveshjen e Stabilizim-Asociimit (2016) dhe me aplikimin
+për anëtarësim në BE (2022) \cite{ec2024}, e shndërron përafrimin me
+Kornizën Evropiane të Ndërveprueshmërisë (EIF) \cite{eif2017} nga një
+zgjedhje politike në një detyrim strategjik.
+
+Megjithatë, të dhënat e vetë dokumenteve strategjike zbulojnë një paradoks
+ndërmjet lidhshmërisë dhe përdorimit (Tabela~\ref{tab:treguesit}). Ndonëse
+pothuajse të gjitha ekonomitë familjare kanë qasje në internet, vetëm
+5.3\% e përdoruesve të internetit kanë dorëzuar formularë online, ndërsa nga
+mbi 700 shërbime që ofrojnë institucionet qendrore dhe lokale vetëm rreth
+10\% ofrohen online \cite{strategjia2023,agjenda2030}. Sipas OECD-së, në vitin
+2022 72\% e individëve nuk e kishin përdorur internetin për informata ose
+shërbime të administratës publike \cite{oecd2024}. Në Indeksin e Maturitetit
+GovTech (GTMI) të Bankës Botërore, Kosova ka kaluar nga grupi C në grupin B,
+kryesisht falë ofrimit të shërbimeve, por mbetet më e dobët pikërisht te
+mundësuesit institucionalë (GTEI) dhe angazhimi digjital i qytetarëve
+\cite{strategjia2023}. Kufizimi kryesor, pra, nuk është infrastruktura, por
+kapaciteti institucional për ta shndërruar atë në vlerë publike.
+
+\begin{table}[!t]
+\caption{Treguesit kryesorë të gjendjes dhe synimet e e-Qeverisjes në
+Kosovë sipas dokumenteve strategjike}
+\label{tab:treguesit}
+\centering
+\footnotesize
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{>{\raggedright\arraybackslash}p{0.56\columnwidth}
+                >{\raggedright\arraybackslash}p{0.34\columnwidth}}
+\toprule
+\textbf{Treguesi} & \textbf{Vlera / synimi} \\
+\midrule
+Ekonomi familjare me qasje në internet \cite{strategjia2023} &
+99.8\% (2021--2022) \\
+Përdorues të internetit që kanë dorëzuar formularë online
+\cite{agjenda2030} & 5.3\% \\
+Shërbime (nga mbi 700, qendrore e lokale) të ofruara online
+\cite{strategjia2023} & $\approx$10\% \\
+Shërbime qendrore e lokale të digjitalizuara -- synim
+\cite{strategjia2023} & 40\% (2025); 65\% (2027) \\
+Sisteme informative të lidhura me \textit{Government Gateway} -- synim
+\cite{strategjia2023} & 30\% (2025); 70\% (2027) \\
+Indeksi i mundësuesve GovTech (GTEI) \cite{strategjia2023} &
+0.456, niveli C; synim $\geq$0.70 (2027) \\
+Specialistë të TI-së në sektorin publik \cite{strategjia2023} &
+$\approx$450, ose 0.5\% e punësimit publik (norma ndërkombëtare 2--3\%) \\
+Buxheti indikativ i AD~2030 \cite{agjenda2030} &
+152 mln euro, prej tyre 35\% nga donatorët \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Ky hendek shfaqet në tri dimensione të ndërlidhura. \textit{Horizontalisht},
+shumë shërbime ofrohen përmes portaleve individuale të agjencive, metadatat
+nuk janë të harmonizuara, nuk ekziston një pasqyrë e sistemeve të TI-së në
+sektorin publik dhe arkitektura e ndërmarrjes së ``qeverisë në tërësi''
+mungon ose është e vjetruar \cite{strategjia2023}; vlerësimi i Agjendës
+2013--2020 tregoi gjithashtu se ministritë i zbatuan detyrat e tyre në
+mënyra shumë të ndryshme, pa mekanizma korrigjues \cite{agjenda2030}.
+\textit{Vertikalisht}, 38 komunat kanë kompetenca vetanake në ofrimin e
+shërbimeve sipas Ligjit Nr.~03/L-040 për vetëqeverisjen lokale
+\cite{ligji03L040}, por kapacitete digjitale shumë të pabarabarta, ndërkohë
+që në përshkrimin e strukturave të zbatimit të Strategjisë 2023--2027 niveli
+lokal nuk ka përfaqësim të dedikuar \cite{strategjia2023}.
+\textit{Institucionalisht}, arkitektura e koordinimit
+mbështetet në Komisionin për Transformim Digjital të
+kryesuar nga Kryeministri, Njësinë e Transformimit
+Digjital, komitetin teknik dhe Këshillin e RAP-it
+\cite{strategjia2023}. Ndërkohë, kalimi i Agjencisë
+së Shoqërisë së Informacionit (ASHI) në kuadër të
+Ministrisë së Digjitalizimit dhe Administratës Publike
+përfaqëson një hap të ri drejt konsolidimit institucional
+dhe forcimit të koordinimit ndërinstitucional në
+procesin e transformimit digjital; AD~2030 parashikon, nga ana e saj, raportim vjetor
+nga Zyra e Kryeministrit dhe Ministria e Ekonomisë \cite{agjenda2030},
+ndërsa në fushën e sigurisë kibernetike veprojnë akterë të tjerë, si
+KOS-CERT, i cili sipas gjendjes së vitit 2022 funksiononte në kuadër të
+ARKEP-it \cite{kipred2022}. Vetë regjistri i rreziqeve
+të Strategjisë pranon se rolet e palëve janë të paqarta dhe se ka fusha të
+mbivendosura, ndërsa menaxhimi i mundësuesve kryesorë teknikë (identiteti
+digjital, \textit{Government Gateway}, e-Kosova dhe qendra e të dhënave)
+varet nga partnerët e jashtëm \cite{strategjia2023}.
+
+Situata rëndohet nga një deficit i matjes. Meqë Kosova nuk është shtet
+anëtar i OKB-së, ajo nuk përfshihet në Indeksin e Zhvillimit të
+e-Qeverisjes (EGDI) \cite{undesa2024} dhe ende nuk është pjesë e indeksit
+DESI të BE-së \cite{agjenda2030}; njëkohësisht, shumë tregues të Strategjisë
+2023--2027 kanë vlerë bazë ``N/A'' ose ``për t'u matur'' dhe trajtohen si
+projekt-sugjerime deri në hartimin e Pasaportës së Treguesve
+\cite{strategjia2023}. Studimet akademike për Kosovën janë kryesisht
+juridike ose të përqendruara te pranimi i shërbimeve
+\cite{dermaku2024,krasniqi2026} dhe rrallë e lidhin maturinë e shërbimeve me
+kornizën ligjore e institucionale dhe me dinamikat qendër--komunë. Duke u
+nisur nga premisa se sfida kryesore e e-Qeverisjes në Kosovë nuk është më
+mungesa e teknologjisë, por mungesa e koordinimit institucional që e
+shndërron teknologjinë në vlerë publike, ky punim propozon një vlerësim të
+integruar të modelit aktual, të kornizës ligjore e institucionale, të
+faktorëve SWOT në nivel qendror e lokal dhe të mekanizmave të koordinimit
+ndërinstitucional.
+% ---------------------------------------------------------------------
+% 4. QËLLIMI I PUNIMIT
+% ---------------------------------------------------------------------
+\section{Qëllimi i punimit}
+\label{sec:qellimi}
+Qëllimi i këtij punimi është të vlerësojë në mënyrë kritike modelin aktual
+të e-Qeverisjes në Kosovë dhe të identifikojë kushtet ligjore,
+institucionale dhe organizative që e mundësojnë ose e pengojnë kalimin nga
+digjitalizimi i shërbimeve të veçanta drejt një sistemi të integruar, të
+sigurt dhe të orientuar te përdoruesi, në nivel qendror dhe lokal.
+E-Qeverisja konceptualizohet si sistem socio-teknik, rezultatet e të cilit
+varen nga ndërveprimi i politikave, menaxhimit dhe teknologjisë
+\cite{pardo2012}. Kuadri analitik ndërthur modelin e fazave të
+Layne dhe Lee \cite{layne2001} dhe modelin evolutiv për vlerësimin e maturisë, me katër shtresat e
+ndërveprueshmërisë të EIF-it (ligjore, organizative, semantike dhe teknike)
+për hartëzimin e kornizës normative dhe institucionale \cite{eif2017}.
+Metodologjikisht, punimi mbështetet në analizë cilësore të dokumenteve
+(AD~2030, Strategjia 2023--2027, legjislacioni përkatës, raportet
+ndërkombëtare të monitorimit dhe studimet e politikave), të krahasuar me
+treguesit sasiorë të disponueshëm; gjetjet sintetizohen përmes analizës SWOT
+të diferencuar për nivelin qendror e lokal dhe zgjerohen në matricën TOWS,
+në mënyrë që diagnoza të shndërrohet në opsione strategjike. Pyetja kryesore
+kërkimore është: \textit{cilët faktorë ligjorë, institucionalë dhe
+teknologjikë e shpjegojnë hendekun ndërmjet kapaciteteve digjitale të
+ndërtuara dhe përdorimit real të shërbimeve elektronike në Kosovë, dhe cili
+model i koordinimit ndërinstitucional mund ta ngushtojë këtë hendek ndërmjet
+nivelit qendror dhe atij lokal?} Synimi përfundimtar është t'u ofrohet
+politikëbërësve një bazë analitike dhe një udhërrëfyes i zbatueshëm, në
+përputhje me afatet e Strategjisë 2023--2027 dhe të AD~2030.
+% ---------------------------------------------------------------------
+% 5. OBJEKTIVAT E PUNIMIT
+% ---------------------------------------------------------------------
+\section{Objektivat e punimit}
+\label{sec:objektivat}
+\begin{enumerate}
+\renewcommand{\labelenumi}{O\arabic{enumi}:}
+\item të vlerësohet niveli i maturisë së modelit aktual të e-Qeverisjes në
+dimensionin horizontal (ndërsektorial) dhe vertikal (qendër--komunë) dhe të
+formulohen rekomandime;
+\item të hartëzohen boshllëqet, mbivendosjet e mandateve dhe mospërputhjet e
+kornizës ligjore e institucionale sipas shtresave të EIF-it dhe
+\textit{acquis}-së së BE-së;
+\item të kryhet një analizë krahasuese SWOT për nivelin qendror dhe atë
+lokal, e zgjeruar në matricë TOWS;
+\item të propozohet një model qeverisjeje për koordinimin ndërinstitucional,
+me role, instrumente dhe tregues të matshëm të performancës.
+\end{enumerate}
+% ---------------------------------------------------------------------
+% 6. GJENDJA AKTUALE (STATE OF THE ART)
+% ---------------------------------------------------------------------
+\section{Gjendja aktuale e punëve të ngjashme (State of the Art)}
+\label{sec:sota}
+\subsection{Maturia dhe faktorët e zbatimit}
+Literatura e hershme e konceptualizon e-Qeverisjen si proces me faza. Layne
+dhe Lee \cite{layne2001} dallojnë katalogimin, transaksionin, integrimin
+vertikal dhe integrimin horizontal, duke argumentuar se çdo fazë rrit
+kompleksitetin teknologjik e organizativ, por edhe vlerën për qytetarin.
+Lee e zhvendos fokusin nga teknologjia te
+institucionet përmes një modeli evolutiv katërfazor (digjitalizim,
+transformim, angazhim, kontekstualizim), ku faza më e avancuar kërkon
+përshtatjen e politikave me nevojat specifike të vendit dhe të komunitetit.
+Kalimi ndërmjet fazave nuk është linear: Glyptis et al. gjen se në
+komuna e-Qeverisja mbetet kryesisht në fazat informative e transaksionale
+dhe se madhësia e kapacitetet administrative ndikojnë ndjeshëm. Për vendet
+e vogla, Glyptis et al. \cite{glyptis2020} e lidhin suksesin e projekteve me
+gatishmërinë elektronike, kornizën politike e ligjore dhe faktorët
+organizativë e socio-kulturorë.
+
+\subsection{Ndërveprueshmëria dhe koordinimi}
+Linja e dytë e trajton integrimin si problem qeverisjeje. Pardo, Nam dhe
+Burke \cite{pardo2012} tregojnë empirikisht se ndërveprueshmëria është
+rezultat i ndërveprimit të politikave, menaxhimit dhe teknologjisë, ku
+qeverisja e përbashkët dhe besimi ndërinstitucional janë po aq të
+rëndësishëm sa standardet teknike. Rasti i Estonisë, model referimi për
+Strategjinë kosovare, tregon se suksesi lidhet më shumë me vendimet e hershme
+arkitekturore, kulturën e inovacionit dhe bashkëpunimin publik--privat sesa
+me vëllimin e investimeve \cite{kalvet2012}.
+
+\subsection{Studimet për Kosovën dhe boshllëku kërkimor}
+Dërmaku dhe Emini \cite{dermaku2024} analizojnë bazën juridike të
+digjitalizimit të administratës dhe tregojnë se transformimi kërkon
+përputhje ndërmjet teknologjisë dhe normave të procedurës administrative,
+regjistrave publikë dhe mbrojtjes së të dhënave. Krasniqi, Elezi dhe Vuniqi
+\cite{krasniqi2026} identifikojnë besimin institucional, aftësitë digjitale,
+interoperabilitetin dhe sigurinë kibernetike si sfidat kryesore të
+platformës e-Kosova. Në dimensionin e sigurisë, Peci dhe Ukshini
+\cite{kipred2022} konstatojnë se korniza ligjore është ndërtuar gradualisht
+që nga viti 2010, por se bashkëpunimi me akademinë është i herëpashershëm
+dhe ai me qytetarët pothuajse mungon. Në sintezë, literatura ndërkombëtare ofron instrumente
+të fuqishme për maturinë, faktorët e suksesit dhe ndërveprueshmërinë, por
+këto rrallë integrohen në një kuadër të vetëm. Studimet për Kosovën janë
+kryesisht sektoriale (juridike, të pranimit ose të sigurisë) dhe nuk e lidhin
+vlerësimin e modelit me analizën SWOT qendër--komunë dhe me dizajnin e
+mekanizmave të koordinimit. Ky punim synon ta adresojë pikërisht këtë
+boshllëk.
+% ---------------------------------------------------------------------
+% 7. REFERENCAT (renditur sipas citimit të parë, stili IEEE)
+% Punimet shkencore me DOI janë verifikuar përmes Crossref.
+% ---------------------------------------------------------------------
+\begin{thebibliography}{00}
+\bibitem{strategjia2023} Qeveria e Republikës së Kosovës, \emph{Strategjia e Kosovës për Qeverisje Elektronike 2023--2027}, versioni final, Prishtinë, Kosovë, 2023.
+\bibitem{agjenda2030} Ministria e Ekonomisë, \emph{Agjenda Digjitale e Kosovës 2030}, Prishtinë, Kosovë, 2023.
+\bibitem{ec2024} European Commission, ``Kosovo 2024 Report,'' Commission Staff Working Document, Brussels, Belgium, 2024.
+\bibitem{eif2017} European Commission, ``New European Interoperability Framework: Promoting seamless services and data flows for European public administrations,'' COM(2017) 134 final, Luxembourg: Publications Office of the European Union, 2017.
+\bibitem{oecd2024} OECD, \emph{Western Balkans Competitiveness Outlook 2024: Kosovo}. Paris, France: OECD Publishing, 2024.
+\bibitem{ligji03L040} Kuvendi i Republikës së Kosovës, ``Ligji Nr. 03/L-040 për Vetëqeverisjen Lokale,'' \emph{Gazeta Zyrtare e Republikës së Kosovës}, 2008.
+\bibitem{kipred2022} L. Peci and V. Ukshini, \emph{Qeverisja e mirë në sigurinë kibernetike në Kosovë: Forcimi i themeleve dhe i institucioneve të reja}. Prishtinë, Kosovë: KIPRED/DCAF, Sep. 2022.
+\bibitem{undesa2024} United Nations Department of Economic and Social Affairs, \emph{United Nations E-Government Survey 2024: Accelerating Digital Transformation for Sustainable Development}. New York, NY, USA: United Nations, 2024.
+\bibitem{dermaku2024} K. Dërmaku and A. Emini, ``Digitisation of administration and legal basis in Kosovo,'' \emph{Access to Justice in Eastern Europe}, vol. 7, no. 1, pp. 245--263, 2024, doi: 10.33327/AJEE-18-7.1-a000107.
+\bibitem{krasniqi2026} M. Krasniqi, Z. Elezi, and D. Vuniqi, ``The digitalization of public administration in Kosovo: Challenges, opportunities and the impact on the quality of public services,'' \emph{Prizren Social Science Journal}, vol. 10, no. 2, pp. 165--177, 2026, doi: 10.32936/pssj.v10i2.880.
+\bibitem{pardo2012} T. A. Pardo, T. Nam, and G. B. Burke, ``E-government interoperability: Interaction of policy, management, and technology dimensions,'' \emph{Social Science Computer Review}, vol. 30, no. 1, pp. 7--23, 2012, doi: 10.1177/0894439310392184.
+\bibitem{layne2001} K. Layne and J. Lee, ``Developing fully functional E-government: A four stage model,'' \emph{Government Information Quarterly}, vol. 18, no. 2, pp. 122--136, 2001, doi: 10.1016/S0740-624X(01)00066-1.
+\bibitem{glyptis2020} L. Glyptis, M. Christofi, D. Vrontis, M. Del Giudice, S. Dimitriou, and P. Michael, ``E-Government implementation challenges in small countries: The project manager's perspective,'' \emph{Technological Forecasting and Social Change}, vol. 152, 119880, 2020, doi: 10.1016/j.techfore.2019.119880.
+\bibitem{kalvet2012} T. Kalvet, ``Innovation: A factor explaining e-government success in Estonia,'' \emph{Electronic Government, an International Journal}, vol. 9, no. 2, pp. 142--157, 2012, doi: 10.1504/EG.2012.046266.
+\end{thebibliography}
+\end{document}
